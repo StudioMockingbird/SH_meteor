@@ -49,18 +49,17 @@ if (Meteor.isServer) {
 
 
 // Here we add our own code to insert a few stories in the db
-//myobject = Meteor.http.get("http://localhost:3000/posts_500.json").data;
 if (Meteor.isServer) {
     var myjson = {};
-    fs = __meteor_bootstrap.require('fs');
-    fs.readFile('./posts_500.json', 'utf8', function (err,data) {
+    fs = __meteor_bootstrap__.require('fs');
+    fs.readFile('./book.json', 'utf8', function (err,data) {
         if (err) {
            return console.log(err);
         }
     myjson = JSON.parse(data);
     });
     
-    console.log(myjson);
+    console.log(myjson.result);
 }
 
 //Initialize the collection called book
