@@ -53,10 +53,14 @@ Pages = new Meteor.Collection("pages");
 if (Meteor.isServer) {
     Meteor.startup(function () {
         if(Pages.find().count() === 0){
-            var pages = JSON.parse(myBook.stories);
-            for (page in pages) {
-                Pages.insert(pages[page]);
-            }
+//            var pages = JSON.parse(myBook.stories);
+            console.log(myBook);
+            _.each(myBook, function(room) {
+            Pages.insert(room);
+            });
+//            for (page in myBook) {
+//                Pages.insert(pages[page]);
+//            }
         }
     });
 }
