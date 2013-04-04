@@ -1,8 +1,9 @@
 <template name="templBook">
+	<ul class="thumbnails">
   {{#each stories}}
     {{> templStory}}
-    <hr>
   {{/each}}
+  </ul>
 </template>
 
 <template name="templNewStory">
@@ -17,18 +18,17 @@
 </template>
 
 <template name="templStory">
-  <div class="outer">
-    <p class="title"><h3>{{id}} . {{title}}</h3></p>
-    <p class="id">{{_id}}</p>
-    <p class="thumb"><img src="{{thumbnail}}"></p>
-    <p class="link">{{link}}</p>
-    <p class="text">{{text}}</p>
-    <p class="authorname">{{author_name}}</p>
-    <p class="email">{{email}}</p>
-    <p class="datetime">{{datetime}}</p>
-    <p class="tags">{{tags}}</p>
-    <p class="score">{{score}}</p>
-    <input type="button" class="inc" value="^" />
-    <input type="button" class="dec" value="v" />
-  </div>
+	<li class="span3">
+	  <div class="thumbnail">
+		<img src="http://placehold.it/320x200" alt="ALT NAME">
+		<div class="caption">
+		  <h4>{{title}}</h4>
+		  <p>{{text}}</p>
+		  <p align="center">
+			<a href="{{link}}" class="btn btn-primary btn-block">Open Link</a>
+			<a href="#" class="btn btn-block">44 Comments</a>
+		  </p>
+		</div>
+	  </div>
+	</li>
 </template>
