@@ -49,17 +49,16 @@ if (Meteor.isServer) {
 
 
 // Here we add our own code to insert a few stories in the db
+Pages = new Meteor.Collection("pages");
 if (Meteor.isServer) {
-    var myjson = {};
-    fs = __meteor_bootstrap__.require('fs');
-    fs.readFile('./book.json', 'utf8', function (err,data) {
-        if (err) {
-           return console.log(err);
+    Meteor.startup(function () {
+        if(Pages.find().count() === 0){
+            var pages = JSON.parse(myBook.stories);
+            for (page in pages) {
+                Pages.insert(pages[page]);
+            }
         }
-    myjson = JSON.parse(data);
     });
-    
-    console.log(myjson.result);
 }
 
 //Initialize the collection called book
