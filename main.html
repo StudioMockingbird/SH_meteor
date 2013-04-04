@@ -1,0 +1,31 @@
+<head>
+  <title>SH1</title>
+</head>
+
+<body>  
+  {{> templBook}}
+</body>
+
+<template name="templBook">
+  {{#each stories}}
+    {{> templStory}}
+    <hr>
+  {{/each}}
+</template>
+
+<template name="templStory">
+  <div class="outer">
+    <p class="title"><h3>{{id}} . {{title}}</h3></p>
+    <p class="id">{{_id}}</p>
+    <p class="thumb"><img src="{{thumbnail}}"></p>
+    <p class="link">{{link}}</p>
+    <p class="text">{{text}}</p>
+    <p class="authorname">{{author_name}}</p>
+    <p class="email">{{email}}</p>
+    <p class="datetime">{{datetime}}</p>
+    <p class="tags">{{tags}}</p>
+    <p class="score">{{score}}</p>
+    <input type="button" class="inc" value="^" />
+    <input type="button" class="dec" value="v" />
+  </div>
+</template>
