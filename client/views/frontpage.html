@@ -19,8 +19,13 @@
 
 <template name="templStory">
 	<li class="span3">
+
 	  <div class="thumbnail">
 		<img src="http://placehold.it/320x200" alt="ALT NAME">
+		<input type="button" class="inc" value="^" />
+		<input type="button" class="dec" value="v" />
+		Score: {{score}}
+
 		<div class="caption">
 		  <h4>{{title}}</h4>
 		  <p>{{text}}</p>
