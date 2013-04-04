@@ -3,6 +3,8 @@
 </head>
 
 <body>  
+  {{> templNewStory}}
+  <hr>
   {{> templBook}}
 </body>
 
@@ -11,6 +13,17 @@
     {{> templStory}}
     <hr>
   {{/each}}
+</template>
+
+<template name="templNewStory">
+  <div id="containerNewStory">
+    <input type="text" id="title" placeholder="title" />
+    <input type="textarea" id="text" placeholder="text" />
+    <input type="text" id="link" placeholder="link" />
+    <input type="text" id="score" placeholder="score" />
+    <input type="button" id="addStory" class="addStory" value="Add Story" />
+  </div>
+
 </template>
 
 <template name="templStory">
